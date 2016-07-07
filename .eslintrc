@@ -1,0 +1,12 @@
+{
+    "root": true,
+    "extends": "airbnb/base",
+
+    "plugins": [
+        "html"
+    ],
+
+    "rules": {
+        "comma-dangle": [2, "never"]
+    }
+}

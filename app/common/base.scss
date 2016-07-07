@@ -1,0 +1,10 @@
+@import 'bootstrap.css';
+@import url(https://fonts.googleapis.com/css?family=Catamaran:400,200,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+// to test sass
+$background-color: #fff;
+body {
+  background-color: $background-color;
+  // to test autoprefixer
+  flex: auto;
+}
