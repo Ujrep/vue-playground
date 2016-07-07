@@ -1,10 +1,17 @@
-@import 'bootstrap.css';
+@import "utils/normalize.scss";
+@import "utils/variables.scss";
+
 @import url(https://fonts.googleapis.com/css?family=Catamaran:400,200,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
-// to test sass
-$background-color: #fff;
-body {
-  background-color: $background-color;
-  // to test autoprefixer
-  flex: auto;
+
+.wrapper {
+  min-height: 100%;
+
+  margin-bottom: -$footer-height;
+}
+
+.wrapper:after {
+  content: "";
+  display: block;
+  height: $footer-height;
 }
