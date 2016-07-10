@@ -1,5 +1,6 @@
-# mylocal-myaccount
-My account
+# PLAYGROUND
+
+Technologies USED: npm, vuejs(vue-router, vueify), SASS 
 
 Install it.
 ```

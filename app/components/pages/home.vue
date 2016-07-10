@@ -1,18 +1,31 @@
 <style lang="scss">
+  @import 'app/common/utils/colors.scss';
 
-  // css
+  .Home {
+    max-width: 1170px;
+    height: 100%;
 
+    margin: 0 auto;
+    background-color: $cod-gray;
+
+    text-align: center;
+  }
 </style>
 
 <template>
 
   <div class="Home">
-    Home
+    <custom-header></custom-header>
+    <navigation></navigation>
+    <new-added></new-added>
   </div>
 
 </template>
 
 <script>
+  import Header from 'components/partials/header.vue'
+  import Navigation from 'components/partials/navigation.vue'
+  import NewAdded from 'components/partials/new-added.vue'
 
   export default {
     name: 'Home',
@@ -21,6 +34,9 @@
       };
     },
     components: {
+      'custom-header': Header,
+      'navigation': Navigation,
+      'new-added': NewAdded,
     }
   };
 </script>
