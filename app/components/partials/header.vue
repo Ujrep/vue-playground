@@ -40,8 +40,8 @@
 </template>
 
 <script>
-  import Button from 'components/common/button.vue'
-  import Dropdown from 'components/common/dropdown.vue'
+  import Button from 'components/common/button.vue';
+  import Dropdown from 'components/common/dropdown.vue';
 
   export default {
     name: 'Header',

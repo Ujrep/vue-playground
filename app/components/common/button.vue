@@ -39,7 +39,7 @@
     }
 
     &--primary {
-      background: $barley-corn;
+      background: $tobaco-brown;
       &:before {
         border: 2px solid $barley-corn;
       }

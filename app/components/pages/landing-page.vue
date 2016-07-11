@@ -94,7 +94,7 @@
 
 <script>
 
-  import Button from 'components/common/button.vue'
+  import Button from 'components/common/button.vue';
 
   export default {
     name: 'LadingPage',

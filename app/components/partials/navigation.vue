@@ -11,8 +11,9 @@
   }
 
   .Navigation-items {
+    display: inline-block;
     list-style: none;
-    margin: 0;
+    margin: 0 100px 0 0;
     padding: 0;
   }
 
@@ -46,6 +47,20 @@
     color: $barley-corn;
   }
 
+  .Navigation-search {
+    display: inline-block;
+    position: relative;
+  }
+
+  .Navigation-searchArea {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 26px;
+
+    width: 100%;
+    height: auto;
+  }
 </style>
 
 <template>
@@ -58,23 +73,35 @@
         </a>
       </li>
     </ul>
+    <div class="Navigation-search">
+      <icon icon-id="search"></icon>
+      <div class="Navigation-searchArea">
+        <input class="Navigation-searchInput" type="text" name="search" value="">
+        <ul class="Navigation-searchList">
+          <li class="Navigation-searchItem">
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
 </template>
 
 <script>
-  import Button from 'components/common/button.vue'
-  import Dropdown from 'components/common/dropdown.vue'
+  import Button from 'components/common/button.vue';
+  import Dropdown from 'components/common/dropdown.vue';
+  import Icon from 'components/common/icon.vue';
 
   export default {
     name: 'Navigation',
     components: {
       'custom-button': Button,
-      'custom-dropdown': Dropdown
+      'custom-dropdown': Dropdown,
+      'icon': Icon
     },
     data() {
       return {
-        categories: ['Recomandate', 'Femei', 'Lesbiene', 'Barbati', 'Gay', 'TS', 'TV', 'Cupluri', 'BDSM', 'Masaj', 'Agentii']
+        categories: ['Recomandate', 'Femei', 'Lesbiene', 'Barbati', 'Gay', 'Cupluri', 'BDSM', 'Masaj', 'Agentii']
       };
     }
   };

@@ -18,14 +18,16 @@
     <custom-header></custom-header>
     <navigation></navigation>
     <new-added></new-added>
+    <last-seen></last-seen>
   </div>
 
 </template>
 
 <script>
-  import Header from 'components/partials/header.vue'
-  import Navigation from 'components/partials/navigation.vue'
-  import NewAdded from 'components/partials/new-added.vue'
+  import Header from 'components/partials/header.vue';
+  import Navigation from 'components/partials/navigation.vue';
+  import NewAdded from 'components/partials/new-added.vue';
+  import LastSeen from 'components/partials/last-seen.vue';
 
   export default {
     name: 'Home',
@@ -37,6 +39,7 @@
       'custom-header': Header,
       'navigation': Navigation,
       'new-added': NewAdded,
+      'last-seen': LastSeen,
     }
   };
 </script>

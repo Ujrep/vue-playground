@@ -2,7 +2,7 @@
 @import 'app/common/utils/colors.scss';
 @import 'app/common/utils/variables.scss';
 
-  .NewAdded {
+  .LastSeen {
     margin: 0 0 70px;
 
     text-align: left;
@@ -10,7 +10,7 @@
     overflow: hidden;
   }
 
-  .NewAdded-items {
+  .LastSeen-items {
     margin: 0;
     padding: 0;
     overflow: auto;
@@ -18,7 +18,7 @@
     transition: all .5s linear;
   }
 
-  .NewAdded-tag {
+  .LastSeen-tag {
     position: relative;
     width: 100%;
     padding: 0 0 20px;
@@ -41,40 +41,32 @@
     }
   }
 
-  .NewAdded-arrows {
+  .LastSeen-remove {
     position: absolute;
     right: 5px;
     top: 5px;
-  }
 
-  .NewAdded-arrow {
-    margin: 0 0 0 10px;
+    &:before {
+      content: 'Clear All';
 
-    transform: rotate(-90deg);
+      font-size: 18px;
+      font-weight: bold;
+      color: $dark-tan;
 
-    &--right {
-      transform: rotate(90deg);
-    }
-
-    svg {
-      height: 4px;
     }
   }
 
 </style>
 
 <template>
-  <div class="NewAdded">
-    <div class="NewAdded-tag">
-      Escorte Noi
-      <div class="NewAdded-arrows">
-        <icon class="NewAdded-arrow" icon-id="arrow" @click="goLeft"></icon>
-        <icon class="NewAdded-arrow NewAdded-arrow--right" icon-id="arrow" @click="goRight"></icon>
+  <div class="LastSeen">
+    <div class="LastSeen-tag">
+      Ultimele Vazute
+      <div class="LastSeen-remove">
+        <icon icon-id="close" type="negative"></icon>
       </div>
     </div>
-    <div class="NewAdded-items"
-        :style="{width: containerWidth + 'px',
-                transform: 'translateX(' + translation + 'px)'}">
+    <div class="LastSeen-items">
       <preview v-for="item in items" type="small" :item="item"></preview>
     </div>
   </div>
@@ -86,18 +78,13 @@
   import Icon from 'components/common/icon.vue';
 
   export default {
-    name: 'NewAdded',
+    name: 'LastSeen',
     components: {
       'preview': Preview,
       'icon': Icon
     },
-    ready() {
-      this.containerWidth = this.items.length * 100;
-    },
     data() {
       return {
-        containerWidth: 0,
-        translation: 0,
         items: [
           {
             image: 'https://i.ytimg.com/vi/TZiQK81Rjfw/maxresdefault.jpg',
@@ -172,60 +159,9 @@
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
-          }, {
-            image: 'http://portra.wpshower.com/wp-content/uploads/2014/03/martin-schoeller-emma-watson-portrait-up-close-and-personal-1126x1280.jpg',
-            id: '123',
-            name: 'Andreea Esca',
-            age: '46',
-            location: 'Bucharest, Romania',
-            type: 'News Presenter'
-          }, {
-            image: 'http://www.stockvault.net/blog/wp-content/uploads/2013/11/Portrait-8.jpg',
-            id: '1245',
-            name: 'Andreea Esca',
-            age: '46',
-            location: 'Bucharest, Romania',
-            type: 'News Presenter'
-          },
-          {
-            image: 'https://i.ytimg.com/vi/TZiQK81Rjfw/maxresdefault.jpg',
-            id: '12',
-            name: 'Andreea Esca',
-            age: '46',
-            location: 'Bucharest, Romania',
-            type: 'News Presenter'
-          }, {
-            image: 'http://portra.wpshower.com/wp-content/uploads/2014/03/martin-schoeller-emma-watson-portrait-up-close-and-personal-1126x1280.jpg',
-            id: '123',
-            name: 'Andreea Esca',
-            age: '46',
-            location: 'Bucharest, Romania',
-            type: 'News Presenter'
-          }, {
-            image: 'http://www.stockvault.net/blog/wp-content/uploads/2013/11/Portrait-8.jpg',
-            id: '1245',
-            name: 'Andreea Esca',
-            age: '46',
-            location: 'Bucharest, Romania',
-            type: 'News Presenter'
           }
         ]
       };
     },
-    methods: {
-      goLeft() {
-        console.log('left');
-        if (this.translation <= 0) {
-          this.translation += 100;
-        }
-      },
-      goRight() {
-        console.log('right');
-        if (Math.abs(this.translation) <= this.containerWidth) {
-          this.translation -= 100;
-        }
-
-      }
-    }
   };
 </script>

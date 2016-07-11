@@ -77,7 +77,7 @@
 </template>
 
 <script>
-  import Dropdown from 'components/common/dropdown.vue'
+  import Dropdown from 'components/common/dropdown.vue';
 
   export default {
     name: 'Footer',
