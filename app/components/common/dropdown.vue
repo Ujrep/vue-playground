@@ -113,7 +113,7 @@
           <div class="Dropdown-item"
             :class="{'Dropdown-item--selected': opt === value}"
             v-for="opt in options"
-            @click="selectLanguage(opt)">
+            @click="select(opt)">
             {{ opt }}
           </div>
         </div>
@@ -130,7 +130,7 @@
 
     data() {
       return {
-        opened: false,
+        opened: false
       };
     },
 
@@ -138,7 +138,7 @@
       toggleDropdown() {
         this.opened = !this.opened;
       },
-      selectLanguage(opt) {
+      select(opt) {
         this.value = opt;
         this.toggleDropdown();
       }

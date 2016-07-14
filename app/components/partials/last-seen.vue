@@ -24,8 +24,6 @@
     padding: 0 0 20px;
     margin: 0 0 20px;
 
-    font-size: 18px;
-    color: $white;
     text-align: left;
 
     &:after {
@@ -39,6 +37,14 @@
       height: 1px;
       background-color: $mine-shaft;
     }
+  }
+
+  .LastSeen-title {
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+    color: $white;
   }
 
   .LastSeen-remove {
@@ -61,9 +67,11 @@
 <template>
   <div class="LastSeen">
     <div class="LastSeen-tag">
-      Ultimele Vazute
+      <p class="LastSeen-title">
+        Ultimele Vazute
+      </p>
       <div class="LastSeen-remove">
-        <icon icon-id="close" type="negative"></icon>
+        <icon icon-id="close" type="red"></icon>
       </div>
     </div>
     <div class="LastSeen-items">

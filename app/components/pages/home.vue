@@ -1,14 +1,23 @@
 <style lang="scss">
   @import 'app/common/utils/colors.scss';
+  @import 'app/common/utils/media.scss';
 
   .Home {
     max-width: 1170px;
     height: 100%;
 
-    margin: 0 auto;
+    margin: 0 10px;
     background-color: $cod-gray;
 
     text-align: center;
+
+    @include media(medium) {
+      margin: 0 50px;
+    }
+
+    @include media(large) {
+      margin: 0 auto;
+    }
   }
 </style>
 
@@ -18,6 +27,7 @@
     <custom-header></custom-header>
     <navigation></navigation>
     <new-added></new-added>
+    <all-list></all-list>
     <last-seen></last-seen>
   </div>
 
@@ -28,6 +38,7 @@
   import Navigation from 'components/partials/navigation.vue';
   import NewAdded from 'components/partials/new-added.vue';
   import LastSeen from 'components/partials/last-seen.vue';
+  import AllList from 'components/partials/all-list.vue';
 
   export default {
     name: 'Home',
@@ -40,6 +51,7 @@
       'navigation': Navigation,
       'new-added': NewAdded,
       'last-seen': LastSeen,
+      'all-list': AllList
     }
   };
 </script>

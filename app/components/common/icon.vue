@@ -26,7 +26,17 @@
       border: 2px solid $barley-corn;
     }
 
-    &--negative {
+    &--square {
+      height: 30px;
+      border-radius: 4px;
+
+      &:before {
+        height: 34px;
+        border-radius: 4px;
+      }
+    }
+
+    &--red {
       background-color: $dark-tan;
 
       &:before {
@@ -36,10 +46,14 @@
   }
 
   .Icon-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
     width: 14px;
     height: 14px;
-
-    padding: 5px;
 
     fill: $white;
   }

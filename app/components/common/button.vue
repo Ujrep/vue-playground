@@ -12,13 +12,13 @@
     border: none;
     outline: none;
     background: none;
-    text-decoration: none;
+    border-radius: 2px;
 
+    text-decoration: none;
     font-size: 20px;
     color: $white;
 
-    border-radius: 4px;
-
+    cursor: pointer;
     &:before {
       content: '';
       position: absolute;
@@ -30,7 +30,7 @@
 
       padding: 4px;
 
-      border-radius: 10px;
+      border-radius: 5px;
     }
 
     &--small {
