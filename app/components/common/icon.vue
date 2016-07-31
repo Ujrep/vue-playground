@@ -43,6 +43,14 @@
         display: none;
       }
     }
+
+    &--normal {
+      background-color: transparent;
+
+      &:before {
+        display: none;
+      }
+    }
   }
 
   .Icon-icon {

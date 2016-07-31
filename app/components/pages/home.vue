@@ -3,16 +3,14 @@
   @import 'app/common/utils/media.scss';
 
   .Home {
-    max-width: 1170px;
     height: 100%;
 
-    margin: 0 10px;
     background-color: $cod-gray;
 
     text-align: center;
 
     @include media(medium) {
-      margin: 0 50px;
+      // margin: 0 50px;
     }
 
     @include media(large) {

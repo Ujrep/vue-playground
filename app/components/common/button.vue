@@ -19,6 +19,7 @@
     color: $white;
 
     cursor: pointer;
+    text-align: center;
 
     &:before {
       content: '';
@@ -32,8 +33,15 @@
       padding: 1px;
     }
 
+    @include media(medium) {
+      width: 270px;
+
+      margin: 0 10px;
+    }
+
     &--small {
-      padding: 5px 40px;
+      width: 130px;
+      padding: 5px 0;
       font-size: 14px;
     }
 
@@ -54,16 +62,11 @@
     }
 
     &--third {
-      color: $scorpions;
+      background: linear-gradient(to bottom, rgba(80,80,80,1) 0%, rgba(90,90,90,1) 2%, rgba(58,58,58,1) 49%, rgba(47,47,47,1) 51%, rgba(30,30,30,1) 100%);
+      color: $white;
       &:before {
-        border: 2px solid $scorpions;
+        border: 2px solid #434343;
       }
-    }
-
-    @include media(medium) {
-      width: 270px;
-
-      margin: 0 10px;
     }
   }
 
