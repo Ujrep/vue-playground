@@ -1,36 +1,35 @@
 <style lang="scss">
   @import 'app/common/utils/variables.scss';
   @import 'app/common/utils/colors.scss';
+  @import 'app/common/utils/media.scss';
 
   .Button {
     position: relative;
-    padding: 10px 80px;
-    margin: 10px 20px;
+    margin: 10px 0;
+    width: 100%;
 
     display: inline-block;
     vertical-align: middle;
     border: none;
     outline: none;
     background: none;
-    border-radius: 2px;
 
     text-decoration: none;
-    font-size: 20px;
+    font-size: 26px;
     color: $white;
 
     cursor: pointer;
+
     &:before {
       content: '';
       position: absolute;
-      left: -6px;
-      top: -6px;
+      left: -3px;
+      top: -3px;
 
       width: 100%;
       height: 100%;
 
-      padding: 4px;
-
-      border-radius: 5px;
+      padding: 1px;
     }
 
     &--small {
@@ -39,16 +38,18 @@
     }
 
     &--primary {
-      background: $tobaco-brown;
+      background: linear-gradient(to bottom, rgba(40,89,77,1) 0%, rgba(14,69,57,1) 2%, rgba(0,58,45,1) 3%, rgba(0,34,26,1) 49%, rgba(0,21,16,1) 51%, rgba(0,15,12,1) 100%);
+      color: #948973;
       &:before {
-        border: 2px solid $barley-corn;
+        border: 2px solid #948973;
       }
     }
 
     &--secondary {
-      color: $wood-bark;
+      background: linear-gradient(to bottom, rgba(93,0,0,1) 0%, rgba(76,0,0,1) 2%, rgba(68,0,0,1) 3%, rgba(35,0,0,1) 49%, rgba(21,0,0,1) 51%, rgba(18,0,0,1) 100%);
+      color: #8b1e1e;
       &:before {
-        border: 2px solid $wood-bark;
+        border: 2px solid #4c0c0c;
       }
     }
 
@@ -58,7 +59,14 @@
         border: 2px solid $scorpions;
       }
     }
+
+    @include media(medium) {
+      width: 270px;
+
+      margin: 0 10px;
+    }
   }
+
 </style>
 
 <template>

@@ -1,12 +1,14 @@
 @import "utils/normalize.scss";
+@import "utils/grid.scss";
 @import "utils/variables.scss";
+@import "utils/colors.scss";
 
 @import url(https://fonts.googleapis.com/css?family=Catamaran:400,200,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
 
 body {
-  background-image: url('/app/common/images/landing-background.png');
-  font-family: 'Roboto';
+  background-color: $black;
+  font-family: 'Catamaran';
 }
 
 .wrapper {

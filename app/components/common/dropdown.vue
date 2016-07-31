@@ -1,5 +1,6 @@
 <style lang="scss">
   @import 'app/common/utils/colors.scss';
+  @import 'app/common/utils/media.scss';
 
   .Dropdown {
     display: inline-block;
@@ -9,36 +10,34 @@
 
   .Dropdown-content {
     position: relative;
-    max-width: 270px;
+    width: 100%;
 
     margin: 0;
 
     &--opened {
-      .Dropdown-select {
-        border-bottom-left-radius: initial;
-        border-bottom-right-radius: initial;
-      }
-
       .Dropdown-icon {
-        transform: translateY(-50%) rotate(0deg);
+        transform: translate(50%, -50%) rotate(0deg);
       }
 
       .Dropdown-list {
-        border-top: 1px solid $mine-shaft2;
         max-height: 153px;
       }
+    }
+
+    @include media(medium) {
+      max-width: 270px;
     }
   }
 
   .Dropdown-select {
-    padding: 10px 40px 10px 20px;
+    padding: 6px 40px 6px 20px;
 
-    background-color: $mine-shaft;
+    background-color: #101010;
 
     font-size: 14px;
-    color: $white;
+    color: #d2d2d2;
 
-    border-radius: 4px;
+    border: 2px solid #5b5242;
 
     cursor: pointer;
   }
@@ -50,7 +49,7 @@
     max-height: 0;
     overflow: hidden;
 
-    background-color: $mine-shaft;
+    background-color: #5b5242;
 
     transition: max-height .4s linear;
 
@@ -59,13 +58,13 @@
 
   .Dropdown-item {
     position: relative;
-    width: 100%;
+    width: calc(100% - 40px);
     height: 100%;
 
-    padding: 10px 0 10px 20px;
+    padding: 10px 20px 10px 20px;
 
     font-size: 14px;
-    color: $white;
+    color: #bcbab7;
 
     cursor: pointer;
 
@@ -77,7 +76,7 @@
 
       width: calc(100% - 40px);
       height: 1px;
-      background-color: $mine-shaft2;
+      background-color: #635b4c;
     }
 
     &:last-child {
@@ -85,21 +84,32 @@
     }
 
     &--selected {
-      background-color: $barley-corn;
+      background-color: #7a705c;
     }
+  }
+
+  .Dropdown-iconHolder {
+    width: 39px;
+    height: 100%;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    background: #5b5242;
   }
 
   .Dropdown-icon {
     position: absolute;
-    right: 10px;
+    right: 50%;
     top: 50%;
 
     width: 13px;
     height: 8px;
 
-    fill: $barley-corn;
+    fill: #b6ad9f;
 
-    transform: translateY(-50%) rotate(-180deg);
+    transform: translate(50%, -50%) rotate(-180deg);
     transition: all .4s linear;
   }
 </style>
@@ -108,7 +118,9 @@
   <div class="Dropdown">
     <div class="Dropdown-content" :class="{'Dropdown-content--opened': opened}">
         <div class="Dropdown-select" @click="toggleDropdown">{{ value }}</div>
-        <svg class="Dropdown-icon"><use xlink:href="#arrow"></use></svg>
+        <div class="Dropdown-iconHolder" @click="toggleDropdown">
+          <svg class="Dropdown-icon"><use xlink:href="#arrow"></use></svg>
+        </div>
         <div class="Dropdown-list">
           <div class="Dropdown-item"
             :class="{'Dropdown-item--selected': opt === value}"

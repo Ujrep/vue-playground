@@ -11,10 +11,6 @@
     @media (min-width: 1280px) { @content; }
   }
 
-  @else if $class == largeHeight {
-    @media (min-height: 1000px) { @content; }
-  }
-
   @else {
     @warn "Breakpoint mixin supports: small, medium, large";
   }
