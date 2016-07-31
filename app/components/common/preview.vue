@@ -125,8 +125,10 @@
     }
 
     svg {
+      left: initial;
       height: 8px;
-      transform: rotate(-90deg) translate(-50%, -50%);
+      transform: rotate(-90deg);
+      transform-origin: top;
     }
   }
 
@@ -143,6 +145,7 @@
         border-radius: 4px 0 0 4px;
       }
       svg {
+        right: 0;
         transform: rotate(90deg);
       }
     }

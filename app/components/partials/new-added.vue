@@ -55,14 +55,15 @@
   .NewAdded-arrow {
     margin: 0 0 0 10px;
 
-    transform: rotate(-90deg);
-
-    &--right {
-      transform: rotate(90deg);
+    svg {
+      transform: translate(-50%, -50%) rotate(-90deg);
+      height: 8px;
     }
 
-    svg {
-      height: 8px;
+    &--right {
+      svg {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
     }
   }
 

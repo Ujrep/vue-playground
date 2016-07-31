@@ -183,21 +183,21 @@
           {
             image: 'https://i.ytimg.com/vi/TZiQK81Rjfw/maxresdefault.jpg',
             id: '12',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://portra.wpshower.com/wp-content/uploads/2014/03/martin-schoeller-emma-watson-portrait-up-close-and-personal-1126x1280.jpg',
             id: '123',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://www.stockvault.net/blog/wp-content/uploads/2013/11/Portrait-8.jpg',
             id: '1245',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
@@ -205,21 +205,21 @@
           {
             image: 'https://i.ytimg.com/vi/TZiQK81Rjfw/maxresdefault.jpg',
             id: '12',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://portra.wpshower.com/wp-content/uploads/2014/03/martin-schoeller-emma-watson-portrait-up-close-and-personal-1126x1280.jpg',
             id: '123',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://www.stockvault.net/blog/wp-content/uploads/2013/11/Portrait-8.jpg',
             id: '1245',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
@@ -227,21 +227,21 @@
           {
             image: 'https://i.ytimg.com/vi/TZiQK81Rjfw/maxresdefault.jpg',
             id: '12',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://portra.wpshower.com/wp-content/uploads/2014/03/martin-schoeller-emma-watson-portrait-up-close-and-personal-1126x1280.jpg',
             id: '123',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://www.stockvault.net/blog/wp-content/uploads/2013/11/Portrait-8.jpg',
             id: '1245',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
@@ -249,21 +249,21 @@
           {
             image: 'https://i.ytimg.com/vi/TZiQK81Rjfw/maxresdefault.jpg',
             id: '12',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://portra.wpshower.com/wp-content/uploads/2014/03/martin-schoeller-emma-watson-portrait-up-close-and-personal-1126x1280.jpg',
             id: '123',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://www.stockvault.net/blog/wp-content/uploads/2013/11/Portrait-8.jpg',
             id: '1245',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
@@ -271,21 +271,21 @@
           {
             image: 'https://i.ytimg.com/vi/TZiQK81Rjfw/maxresdefault.jpg',
             id: '12',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://portra.wpshower.com/wp-content/uploads/2014/03/martin-schoeller-emma-watson-portrait-up-close-and-personal-1126x1280.jpg',
             id: '123',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
           }, {
             image: 'http://www.stockvault.net/blog/wp-content/uploads/2013/11/Portrait-8.jpg',
             id: '1245',
-            name: 'Andreea Esca',
+            name: 'Vasilica',
             age: '46',
             location: 'Bucharest, Romania',
             type: 'News Presenter'
