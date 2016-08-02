@@ -3,6 +3,8 @@
 @import 'app/common/utils/variables.scss';
 
   .Navigation {
+    display: none;
+
     position: relative;
 
     width: 100%;
@@ -15,7 +17,6 @@
     border-radius: 0 0 100px 100px;
 
     &:before {
-      // content: '';
       position: absolute;
       left: -1000px;
       top: -3px;
@@ -24,18 +25,6 @@
       height: 3px;
 
       background-color: $tundora;
-
-      //the second corner
-      // position: absolute;
-      // bottom: 0;
-      // left: -50px;
-      //
-      // height: 54px;
-      // width: 50px;
-      //
-      // border-radius: 0 50px 50px 0;
-      //
-      // background-color: $cod-gray;
     }
 
     &:after {
@@ -48,6 +37,24 @@
       height: 3px;
 
       background-color: $tundora;
+    }
+
+    &--mobile {
+      display: block;
+      position: absolute;
+
+      z-index: 2;
+
+      .Navigation-item {
+        display: block;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .Navigation-search {
+        position: relative;
+        float: right;
+      }
     }
 
 
@@ -197,15 +204,7 @@
 
 <template>
 
-  <div class="Navigation" :class="{'Navigation--searchOpened': showSearchArea}">
-    <ul class="Navigation-items">
-      <li class="Navigation-item" v-for="category in categories">
-        <a href="#" class="Navigation-anchor">
-          {{ category }}
-        </a>
-      </li>
-    </ul>
-
+  <div class="Navigation" :class="{'Navigation--searchOpened': showSearchArea, 'Navigation--mobile': device === 'mobile'}">
     <div class="Navigation-search" @click="showSearchArea = !showSearchArea">
       <icon icon-id="search"></icon>
     </div>
@@ -223,6 +222,14 @@
         </li>
       </ul>
     </div>
+
+    <ul class="Navigation-items">
+      <li class="Navigation-item" v-for="category in categories">
+        <a href="#" class="Navigation-anchor">
+          {{ category }}
+        </a>
+      </li>
+    </ul>
   </div>
 
 </template>
@@ -239,6 +246,9 @@
       'custom-dropdown': Dropdown,
       'icon': Icon
     },
+
+    props: ['device'],
+
     data() {
       return {
         showSearchArea: false,

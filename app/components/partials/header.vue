@@ -70,9 +70,11 @@
       <custom-button text="Cont Nou" type="primary" size="small"></custom-button>
       <custom-dropdown class="Header-dropdown" placeholder="Limba" :options="options" value="Limba Romana"></custom-dropdown>
     </div>
-    <div class="Header-burger" @click="openMenu">
-      <icon icon-id="hamburger" type="normal"></icon>
+    <div class="Header-burger">
+      {{openedMenu}}
+      <icon icon-id="hamburger" type="normal" @click="openedMenu = !openedMenu"></icon>
     </div>
+    <navigation device="mobile" v-show="openedMenu"></navigation>
   </div>
 
 </template>
@@ -81,17 +83,20 @@
   import Button from 'components/common/button.vue';
   import Dropdown from 'components/common/dropdown.vue';
   import Icon from 'components/common/icon.vue';
+  import Navigation from 'components/partials/navigation.vue';
 
   export default {
     name: 'Header',
     components: {
       'custom-button': Button,
       'custom-dropdown': Dropdown,
-      'icon': Icon
+      'icon': Icon,
+      'navigation': Navigation
     },
     data() {
       return {
-        options: ['Limba Romana', 'English Language', 'French Language']
+        options: ['Limba Romana', 'English Language', 'French Language'],
+        openedMenu: false,
       };
     }
   };
