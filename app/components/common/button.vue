@@ -79,9 +79,11 @@
 </template>
 
 <script>
+
   export default {
     name: 'CustomButton',
 
     props: ['type', 'text', 'size'],
   };
+
 </script>
