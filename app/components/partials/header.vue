@@ -74,7 +74,7 @@
       {{openedMenu}}
       <icon icon-id="hamburger" type="normal" @click="openedMenu = !openedMenu"></icon>
     </div>
-    <navigation device="mobile" v-show="openedMenu"></navigation>
+    <navigation device="mobile" :class="{'Navigation--opened': openedMenu}"></navigation>
   </div>
 
 </template>

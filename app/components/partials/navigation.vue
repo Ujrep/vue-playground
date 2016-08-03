@@ -1,6 +1,7 @@
 <style lang="scss">
 @import 'app/common/utils/colors.scss';
 @import 'app/common/utils/variables.scss';
+@import 'app/common/utils/media.scss';
 
   .Navigation {
     display: none;
@@ -15,6 +16,9 @@
 
     border-top: 3px solid $tundora;
     border-radius: 0 0 100px 100px;
+    @include media(large) {
+      display: block;
+    }
 
     &:before {
       position: absolute;
@@ -42,8 +46,22 @@
     &--mobile {
       display: block;
       position: absolute;
+      top: 70px;
+      right: 0;
+      padding: 50px 0 0;
+
+      width: 80%;
 
       z-index: 2;
+
+      border-radius: 0;
+      transform: translateX(100%);
+
+      transition: transform .3s linear;
+
+      @include media(large) {
+        display: none;
+      }
 
       .Navigation-item {
         display: block;
@@ -52,11 +70,26 @@
       }
 
       .Navigation-search {
+        width: 100%;
         position: relative;
-        float: right;
+        text-align: right;
+
+        .Icon {
+          z-index: 2;
+        }
+      }
+
+      .Navigation-searchInput {
+        right: 0;
+        z-index: 1;
+      }
+
+      .Navigation-searchList {
+        right: 0%;
+
+        z-index: 0;
       }
     }
-
 
     &--searchOpened {
       .Navigation-items {
@@ -71,6 +104,11 @@
         opacity: 1;
         width: 86%;
       }
+    }
+
+
+    &--opened {
+      transform: translateX(0);
     }
   }
 
@@ -116,6 +154,8 @@
     top: 50%;
     right: 5%;
 
+    width: 100%;
+    text-align: right;
     transform: translateY(-50%);
     z-index: 3;
   }
@@ -205,22 +245,21 @@
 <template>
 
   <div class="Navigation" :class="{'Navigation--searchOpened': showSearchArea, 'Navigation--mobile': device === 'mobile'}">
-    <div class="Navigation-search" @click="showSearchArea = !showSearchArea">
-      <icon icon-id="search"></icon>
-    </div>
-
-    <div class="Navigation-searchArea">
-      <input class="Navigation-searchInput" type="text" name="search" v-model="searchValue" @keyup="search" placeholder="Cautare dupa cuvinte cheie, ex: blonde, gay, bdsm...">
-      <ul class="Navigation-searchList" v-show="this.searchValue.length > 2">
-        <li class="Navigation-searchItem" v-for="result in searchResults" @click="goToSearchPage(result)">
-          <p class="Navigation-searchText">
-            {{ result.text }}
-          </p>
-          <span class="Navigation-searchTimes">
-            {{ result.times }}
-          </span>
-        </li>
-      </ul>
+    <div class="Navigation-search">
+      <icon icon-id="search" @click="showSearchArea = !showSearchArea"></icon>
+      <div class="Navigation-searchArea">
+        <input class="Navigation-searchInput" type="text" name="search" v-model="searchValue" @keyup="search" placeholder="Cautare dupa cuvinte cheie, ex: blonde, gay, bdsm...">
+        <ul class="Navigation-searchList" v-show="this.searchValue.length > 2">
+          <li class="Navigation-searchItem" v-for="result in searchResults" @click="goToSearchPage(result)">
+            <p class="Navigation-searchText">
+              {{ result.text }}
+            </p>
+            <span class="Navigation-searchTimes">
+              {{ result.times }}
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <ul class="Navigation-items">
@@ -230,6 +269,7 @@
         </a>
       </li>
     </ul>
+
   </div>
 
 </template>
