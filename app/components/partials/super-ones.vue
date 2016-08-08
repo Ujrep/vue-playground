@@ -2,22 +2,23 @@
 @import 'app/common/utils/colors.scss';
 @import 'app/common/utils/variables.scss';
 
-  .NewAdded {
+  .SuperOnes {
     padding: 0 0 70px;
 
     text-align: left;
 
     overflow: hidden;
+    border: 5px solid #4a3d30;
   }
 
-  .NewAdded-items {
+  .SuperOnes-items {
     margin: 0;
     padding: 0;
 
     transition: all .5s linear;
   }
 
-  .NewAdded-tag {
+  .SuperOnes-tag {
     position: relative;
     width: 100%;
     padding: 0 0 20px;
@@ -38,21 +39,22 @@
     }
   }
 
-  .NewAdded-title {
+  .SuperOnes-title {
     margin: 0;
-    padding: 0;
+    padding: 10px;
+    border-bottom: 5px solid #4a3d30;
 
     font-size: 18px;
-    color: $white;
+    color: #978769;
   }
 
-  .NewAdded-arrows {
+  .SuperOnes-arrows {
     position: absolute;
     right: 5px;
     top: 5px;
   }
 
-  .NewAdded-arrow {
+  .SuperOnes-arrow {
     margin: 0 0 0 10px;
 
     svg {
@@ -70,17 +72,17 @@
 </style>
 
 <template>
-  <div class="NewAdded">
-    <div class="NewAdded-tag">
-      <p class="NewAdded-title">
-        Escorte Noi
+  <div class="SuperOnes">
+    <div class="SuperOnes-tag">
+      <p class="SuperOnes-title">
+        Super Escorts
       </p>
-      <div class="NewAdded-arrows">
-        <icon class="NewAdded-arrow" icon-id="arrow" @click="goLeft"></icon>
-        <icon class="NewAdded-arrow NewAdded-arrow--right" icon-id="arrow" @click="goRight"></icon>
-      </div>
+      <!-- <div class="SuperOnes-arrows">
+        <icon class="SuperOnes-arrow" icon-id="arrow" @click="goLeft"></icon>
+        <icon class="SuperOnes-arrow SuperOnes-arrow--right" icon-id="arrow" @click="goRight"></icon>
+      </div> -->
     </div>
-    <div class="NewAdded-items"
+    <div class="SuperOnes-items"
         :style="{width: containerWidth + 'px',
                 marginLeft: translation + 'px' }">
       <preview v-for="item in items" type="small" :item="item"></preview>
@@ -94,7 +96,7 @@
   import Icon from 'components/common/icon.vue';
 
   export default {
-    name: 'NewAdded',
+    name: 'SuperOnes',
     components: {
       'preview': Preview,
       'icon': Icon

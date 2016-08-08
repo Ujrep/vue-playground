@@ -3,7 +3,6 @@
   @import 'app/common/utils/media.scss';
 
   .Dropdown {
-    display: inline-block;
     text-align: left;
     vertical-align: middle;
   }
@@ -30,7 +29,7 @@
   }
 
   .Dropdown-select {
-    padding: 6px 40px 6px 20px;
+    padding: 6px 60px 6px 20px;
 
     background-color: #101010;
 

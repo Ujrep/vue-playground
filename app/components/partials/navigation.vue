@@ -10,83 +10,93 @@
 
     width: 100%;
 
-    margin: 0 auto 70px auto;
+    margin: 0 auto 40px auto;
 
-    background: linear-gradient(to bottom, $mine-shaft 0%, $cod-gray2 25%, $cod-gray2 50%, $mine-shaft 100%);
+    background-color: #2e2e2e;
+    box-shadow: inset 0px 0px 52px 15px rgba(0,0,0,0.64);
 
-    border-top: 3px solid $tundora;
-    border-radius: 0 0 100px 100px;
+    text-align: left;
+
     @include media(large) {
       display: block;
     }
 
-    &:before {
-      position: absolute;
-      left: -1000px;
-      top: -3px;
-
-      width: 1000px;
-      height: 3px;
-
-      background-color: $tundora;
-    }
-
     &:after {
-      // content: '';
+      content: '';
       position: absolute;
-      right: -1000px;
-      top: -3px;
+      bottom: 0;
+      left: -10%;
 
-      width: 1000px;
-      height: 3px;
-
-      background-color: $tundora;
+      height: 5px;
+      width: 120%;
+      background: linear-gradient(to bottom, #232323 20%, #4a4a4a 40%, #2e2e2e 100%);;
     }
 
     &--mobile {
       display: block;
       position: absolute;
-      top: 70px;
+      top: 0;
       right: 0;
-      padding: 50px 0 0;
+      padding: 30px 0 0;
 
       width: 80%;
 
       z-index: 2;
 
       border-radius: 0;
-      transform: translateX(100%);
+      transform: translateX(110%);
 
       transition: transform .3s linear;
+      box-shadow: inset 0px 0px 54px 9px rgba(0,0,0,0.64);
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 5px;
+        background: linear-gradient(to left, #232323 20%, #4a4a4a 40%, #2e2e2e 100%);;
+      }
 
       @include media(large) {
         display: none;
       }
 
+      .Navigation-items {
+        width: 100%;
+        margin: 0;
+      }
+
       .Navigation-item {
         display: block;
-        padding: 10px;
-        text-align: center;
+        width: 100%;
+        padding: 10px 10px 10px 25px;
+
+        border-bottom: 1px solid #3d3c3e;
+        text-align: left;
       }
 
       .Navigation-search {
-        width: 100%;
+        width: 90%;
         position: relative;
-        text-align: right;
+        right: 0;
+      }
 
-        .Icon {
-          z-index: 2;
-        }
+      .Navigation-searchArea {
+        display: block!important;
       }
 
       .Navigation-searchInput {
-        right: 0;
+        width: 82%;
+        opacity: 1;
         z-index: 1;
+        visibility: visible;
       }
 
       .Navigation-searchList {
-        right: 0%;
-
+        width: 80%;
         z-index: 0;
       }
     }
@@ -101,14 +111,15 @@
       }
 
       .Navigation-searchInput {
-        opacity: 1;
         width: 86%;
+        opacity: 1;
+        visibility: visible;
       }
     }
 
 
     &--opened {
-      transform: translateX(0);
+      transform: translateX(20px);
     }
   }
 
@@ -146,7 +157,8 @@
   .Navigation-anchor {
     text-decoration: none;
     font-size: 18px;
-    color: $barley-corn;
+
+    color: #9a8b7c;
   }
 
   .Navigation-search {
@@ -158,6 +170,10 @@
     text-align: right;
     transform: translateY(-50%);
     z-index: 3;
+
+    .Icon {
+      z-index: 3;
+    }
   }
 
   .Navigation-searchArea {
@@ -169,16 +185,15 @@
 
   .Navigation-searchInput {
     width: 0%;
-    opacity: 0;
     position: absolute;
-    right: 5%;;
+    right: -4px;
     top: 50%;
 
     margin: 0;
-    padding: 7px 20px;
+    padding: 3px 20px 3px 10px;
 
-    background-color: $cod-gray3;
-    border: 0;
+    background-color: #252525;
+    border: 2px solid #70593f;
     border-radius: 50px;
 
     outline: none;
@@ -187,6 +202,8 @@
 
     transform: translateY(-50%);
     transition: all .3s linear;
+    opacity: 0;
+    visibility: hidden;
 
     z-index: 2;
   }
@@ -194,7 +211,7 @@
   .Navigation-searchList {
     position: absolute;
     top: -2px;
-    right: 5%;
+    right: 0%;
 
     width: 85%;
     max-height: 220px;
@@ -244,11 +261,13 @@
 
 <template>
 
-  <div class="Navigation" :class="{'Navigation--searchOpened': showSearchArea, 'Navigation--mobile': device === 'mobile'}">
+  <div class="Navigation"
+      :class="{'Navigation--searchOpened': showSearchArea, 'Navigation--mobile': device === 'mobile'}"
+      @click.stop>
     <div class="Navigation-search">
       <icon icon-id="search" @click="showSearchArea = !showSearchArea"></icon>
       <div class="Navigation-searchArea">
-        <input class="Navigation-searchInput" type="text" name="search" v-model="searchValue" @keyup="search" placeholder="Cautare dupa cuvinte cheie, ex: blonde, gay, bdsm...">
+        <input class="Navigation-searchInput" type="text" name="search" v-model="searchValue" @keyup="search" placeholder="Nume, Oras, Telefon">
         <ul class="Navigation-searchList" v-show="this.searchValue.length > 2">
           <li class="Navigation-searchItem" v-for="result in searchResults" @click="goToSearchPage(result)">
             <p class="Navigation-searchText">

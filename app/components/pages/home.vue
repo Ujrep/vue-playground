@@ -9,11 +9,17 @@
 
     text-align: center;
 
+  }
+
+  .Home-container {
+    margin: 0 20px;
+
     @include media(medium) {
       // margin: 0 50px;
     }
 
     @include media(large) {
+      max-width: 1170px;
       margin: 0 auto;
     }
   }
@@ -22,11 +28,13 @@
 <template>
 
   <div class="Home">
-    <custom-header></custom-header>
-    <navigation></navigation>
-    <new-added></new-added>
-    <all-list></all-list>
-    <last-seen></last-seen>
+    <div class="Home-container">
+      <custom-header></custom-header>
+      <navigation></navigation>
+      <super-ones></super-ones>
+      <all-list></all-list>
+      <last-seen></last-seen>
+    </div>
   </div>
 
 </template>
@@ -34,7 +42,7 @@
 <script>
   import Header from 'components/partials/header.vue';
   import Navigation from 'components/partials/navigation.vue';
-  import NewAdded from 'components/partials/new-added.vue';
+  import SuperOnes from 'components/partials/super-ones.vue';
   import LastSeen from 'components/partials/last-seen.vue';
   import AllList from 'components/partials/all-list.vue';
 
@@ -47,7 +55,7 @@
     components: {
       'custom-header': Header,
       'navigation': Navigation,
-      'new-added': NewAdded,
+      'super-ones': SuperOnes,
       'last-seen': LastSeen,
       'all-list': AllList
     }

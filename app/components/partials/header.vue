@@ -4,15 +4,30 @@
 @import 'app/common/utils/media.scss';
 
   .Header {
-    padding: 10px 0 0;
+    position: relative;
+
+    padding: 10px 0 20px;
+    margin: 0 0 20px 0;
 
     text-align: left;
 
-    margin: 0 20px;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -10%;
+
+      height: 5px;
+      width: 120%;
+      background: linear-gradient(to bottom, #232323 20%, #4a4a4a 40%, #2e2e2e 100%);;
+    }
 
     @include media(medium) {
-      max-width: 1170px;
-      margin: 0 auto;
+      padding: 10px 0 10px;
+    }
+
+    @include media(large) {
+      margin: 0;
     }
   }
 
@@ -31,21 +46,32 @@
 
   .Header-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+
+    @include media(medium) {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%);
+    }
 
     @include media(large) {
-      display: inline-block;
-      float: right;
+      right: 0;
     }
   }
 
   .Header-dropdown {
-    display: none!important;
+    display: none;
+
+    @include media(large) {
+      display: inline-block;
+    }
   }
 
   .Header-burger {
     position: absolute;
-    right: 30px;
+    right: 0;
     top: 30px;
 
     svg {
@@ -71,8 +97,7 @@
       <custom-dropdown class="Header-dropdown" placeholder="Limba" :options="options" value="Limba Romana"></custom-dropdown>
     </div>
     <div class="Header-burger">
-      {{openedMenu}}
-      <icon icon-id="hamburger" type="normal" @click="openedMenu = !openedMenu"></icon>
+      <icon icon-id="hamburger" type="normal" @click.stop="openedMenu = !openedMenu"></icon>
     </div>
     <navigation device="mobile" :class="{'Navigation--opened': openedMenu}"></navigation>
   </div>
@@ -87,17 +112,26 @@
 
   export default {
     name: 'Header',
+
     components: {
       'custom-button': Button,
       'custom-dropdown': Dropdown,
       'icon': Icon,
       'navigation': Navigation
     },
+
     data() {
       return {
         options: ['Limba Romana', 'English Language', 'French Language'],
-        openedMenu: false,
+        openedMenu: false
       };
+    },
+
+    ready() {
+      window.addEventListener('click', () => {
+        this.openedMenu = false;
+        console.log('what');
+      });
     }
   };
 </script>
